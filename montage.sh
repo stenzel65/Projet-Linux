@@ -15,6 +15,12 @@ mdadm -C /dev/md5 -n 5 -l raid5 /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf
 #Création d'un volume physique
 pvcreate /dev/md5
 
+#Création du groupe de volume 
+vgcreate mvg /dev/md5
+
+#Création d'un volume logique
+lvcreate -l 100%FREE -n media mvg
+
 #Mise en place d'un système de fichier sur ce raid
 mkfs –t ext4 /dev/md5
 
@@ -23,3 +29,5 @@ mkdir /data
 
 #Montage du volume sur le répertoire
 mount /dev/md5 /data
+
+mount /dev/mvg/media /data
