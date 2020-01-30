@@ -13,5 +13,14 @@ apt install docker.io
 systemctl start docker
 systemctl enable docker
 
-#vérifie la version de docker
+#indique la version de docker
 docker --version
+
+#vérifie la version et la mets à jour si nécessaire
+curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+#paramétrage des droits
+chmod +x /usr/local/bin/docker-compose
+
+#indique la version de docker-compose
+docker-compose --version
