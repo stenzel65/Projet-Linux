@@ -29,5 +29,3 @@ mkdir /data
 
 #Montage du volume sur le répertoire
 mount /dev/md5 /data
-
-mount /dev/mvg/media /data
