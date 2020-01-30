@@ -7,7 +7,7 @@ apt-get update
 apt-get remove docker docker-engine docker.io
 
 #installe docker
-apt install docker.io
+apt-get install docker
 
 #paramétrage de docker pour démarrer au démarrage du système
 systemctl start docker
@@ -16,11 +16,8 @@ systemctl enable docker
 #indique la version de docker
 docker --version
 
-#vérifie la version et la mets à jour si nécessaire
-curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-#paramétrage des droits
-chmod +x /usr/local/bin/docker-compose
+#installe docker-compose
+apt-get install docker-compose
 
 #indique la version de docker-compose
 docker-compose --version
