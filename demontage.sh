@@ -1,5 +1,9 @@
 #!/bin/bash
 
+umount /dev/md0
+
+mdam -S /dev/md0
+
 #Supprime la partition sdb
 fdisk /dev/sdb <<partition1
 d
