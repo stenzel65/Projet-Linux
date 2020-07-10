@@ -6,7 +6,9 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: test123
+    volumes:
+      - /var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
